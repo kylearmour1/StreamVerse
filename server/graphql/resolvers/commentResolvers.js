@@ -1,4 +1,4 @@
-// commentResolvers.js
+
 const Comment = require('../../models/Comment');
 
 const commentResolvers = {
