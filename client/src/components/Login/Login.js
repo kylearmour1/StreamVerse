@@ -1,7 +1,9 @@
+// src/components/Login/Login.js
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { LOGIN_MUTATION } from '../graphql/mutations'; 
+import { LOGIN_MUTATION } from '../graphql/mutations';
 import './Login.css';
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
