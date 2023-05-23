@@ -5,8 +5,11 @@ const jwt = require('jsonwebtoken');
 const typeDefs = require('./graphql/schema/schema');
 const resolvers = require('./graphql/resolvers');
 
-// get JWT secret from environment variables
-const SECRET = process.env.JWT_SECRET;
+const SECRET = '1978'; // Corrected the secret to be a string
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
 
 const authMiddleware = (req, res, next) => {
   const token = req.headers.authorization;
@@ -17,9 +20,6 @@ const authMiddleware = (req, res, next) => {
   next();
 };
 
-const app = express();
-
-// use middleware in your Express server
 app.use(authMiddleware);
 
 async function startServer() {
