@@ -15,6 +15,7 @@ const userSchema = new Schema({
   userName: {
     type: String,
     required: "Enter a Username",
+    unique: true,
     trim: true,
   },
   email: {
@@ -34,6 +35,12 @@ const userSchema = new Schema({
       ref: "Video",
     },
   ],
+  comments: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Comment",
+    }
+  ]
 });
 
 userSchema.pre("save", async function (next) {
