@@ -11,9 +11,7 @@ const Login = () => {
   const [login, { loading, error }] = useMutation(LOGIN_MUTATION, {
     onCompleted({ login }) {
       if (login) {
-        // Store the user's information or use it as needed
-        console.log(login); // Remove this in production
-        // Redirect user to home page or dashboard
+        console.log(login);
       }
     },
   });
@@ -45,7 +43,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button className="login-button" type="submit">Login</button> {/* Apply a class name to the button element */}
+        <button className="login-button" type="submit">Login</button> 
       </form>
       {loading && <p>Loading...</p>}
       {error && <p>Error :( Please try again</p>}
