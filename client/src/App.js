@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/client';
 import client from './apolloClient';
 import Login from './components/Login/Login';
 
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -15,5 +16,6 @@ function App() {
     </ApolloProvider>
   );
 }
+
 
 export default App;

@@ -1,4 +1,3 @@
-// src/components/Login/Login.js
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_MUTATION } from '../graphql/mutations';
