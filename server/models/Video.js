@@ -6,8 +6,8 @@ const videoSchema = new Schema({
         type: String,
         required: "Enter a title",
         minLength: 1,
-        unique: true,
         maxLength: 50,
+        unique: true,
         trim: true,
     },
     description: {
