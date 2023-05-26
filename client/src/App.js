@@ -1,21 +1,23 @@
-const axios = require('axios');
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/client';
+import client from './apolloClient';
+import Login from './components/Login/Login';
+import Home from './components/Home/Home'; 
 
-const apiKey = 'AIzaSyAHY8qXcMRgItfxDE2scj38-2Pq3_avWm4';
-const apiUrl = 'https://www.googleapis.com/youtube/v3/search/videos?part=snippet&maxResults=25&q=react&key=' + apiKey + '&type=video';
 
-axios.get(apiUrl, {
-  params: {
-    key: apiKey
-  }
-})
-.then(response => {
-  const data = response.data;
-  const videos = data.items;
-  videos.forEach(video => {
-    console.log(video.snippet.title);
-  });
-})
-.catch(error => {
-  
-  console.error(error);
-});
+function App() {
+  return (
+    <ApolloProvider client={client}>
+      <Router>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/" component={Home} />
+        </Switch>
+      </Router>
+    </ApolloProvider>
+  );
+}
+
+export default App;
