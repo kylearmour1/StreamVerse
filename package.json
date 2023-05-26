@@ -1,0 +1,11 @@
+{
+  "name": "streamverse",
+  "version": "1.0.0",
+  "description": "A user-centric video sharing platform allowing seamless registration, uploading, viewing, interaction, and sharing of videos. Inspired by YouTube, it offers a polished, user-friendly interface. Secure user login and access control are ensured with JWT-based authentication.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
