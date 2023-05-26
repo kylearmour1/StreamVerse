@@ -4,9 +4,11 @@
   "description": "A video streaming application",
   "main": "server.js",
   "scripts": {
+
     "watch": "nodemon",
     "start": "node server/server.js,"
     
+
   },
   "dependencies": {
     "apollo-server-express": "^3.12.0",
