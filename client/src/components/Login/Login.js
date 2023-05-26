@@ -46,13 +46,10 @@ const Login = () => {
         <button className="login-button" type="submit">Login</button> 
       </form>
       {loading && <p>Loading...</p>}
-      {error && <p>Error :( Please try again</p>}
+      {error && <p>Error :( Please try again)</p>}
     </div>
   );
   
 };
 
 export default Login;
-
-    );
-}
