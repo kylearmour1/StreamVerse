@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios'; 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/client';
 import client from './apolloClient';
 import Login from './components/Login/Login';
-import Home from './components/Home/Home'; 
+import Home from './components/Home/Home';
+
 
 import Header from './components/Header/Header'
 

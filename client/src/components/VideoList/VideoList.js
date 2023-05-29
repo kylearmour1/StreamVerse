@@ -10,7 +10,8 @@ function VideoListPage(props) {
   return (
     <div>
       <h2>Suggested Videos</h2>
-      <div>
+      <div className="suggested-videos">
+        {/* using unique keys to help with rerendering the page with new information each time  */}
         {suggestedVideos.map(video => (
           <div key={video.id}>
             <h3>{video.title}</h3>
