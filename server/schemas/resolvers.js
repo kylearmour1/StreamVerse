@@ -13,7 +13,7 @@ const resolvers = {
         users: async () => {
             return await User.find();
         },
-         video: async (parent, { id }) => {
+        video: async (parent, { id }) => {
             return await Video.findById(id);
         },
         videos: async () => {
