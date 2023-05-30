@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 function VideoPlayer({ video }) {
     if (!video) {
         return <div> No video selected. Please select a video</div>;
