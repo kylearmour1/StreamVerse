@@ -24,10 +24,32 @@ function VideoUpload() {
       return;
     }
 
+// allows users to enter a title and a description for their video upload, and then select a video file from their device to upload
+
     console.log(`Uploading ${selectedFile.name}...`);
   };
 
-  
+  return (
+    <div className="video-upload-page">
+      <h2>Upload a Video</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Title:
+          <input type="text" value={title} onChange={handleTitleChange} />
+        </label>
+        <label>
+          Description:
+          <textarea value={description} onChange={handleDescriptionChange} />
+        </label>
+        <label>
+          Video File:
+          <input type="file" accept="video/*" onChange={handleFileChange} />
+        </label>
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+  );
 }
+
 
 export default VideoUpload;
