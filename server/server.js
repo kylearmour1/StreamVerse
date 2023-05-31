@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const typeDefs = require('./graphql/schema/schema');
 const resolvers = require('./graphql/resolvers');
 
-const SECRET = '1978'; // Corrected the secret to be a string
+const SECRET = process.env.JWT_SECRET; 
 const cors = require('cors');
 
 const app = express();
@@ -40,3 +40,5 @@ async function startServer() {
 }
 
 startServer();
+
+

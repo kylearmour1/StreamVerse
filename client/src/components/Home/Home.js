@@ -25,9 +25,7 @@ const HomePage = () => {
                 </section>
             </main>
 
-            <footer className="footer">
-                <p>&copy; 2023 StreamVerse</p>
-            </footer>
+          
         </div>
     );
 }

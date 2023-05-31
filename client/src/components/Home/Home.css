@@ -6,7 +6,8 @@
     height: 100vh;
     padding: 20px;
     color: #fff;
-    background: #191b1f;
+    background-image: linear-gradient(black, rgba(0, 0, 0, 0.795));
+
 }
 
 .main-content {

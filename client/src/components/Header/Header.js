@@ -1,12 +1,16 @@
 import React from "react";
-import Navigation from "./Navigation";
 import "./Header.css";
 
 function Header() {
   return (
     <header>
-      <h1>StreamVerse</h1>
-      <Navigation />
+      <div className="header-container">
+        <h1>StreamVerse</h1>
+        <div className="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button type="submit">Video Search</button>
+        </div>
+      </div>
     </header>
   );
 }
