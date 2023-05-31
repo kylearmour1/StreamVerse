@@ -6,6 +6,7 @@ import client from "./apolloClient";
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
 import axios from "axios";
+import VideoList from "./components/VideoList/VideoList";
 
 
 function App() {
@@ -39,7 +40,8 @@ function App() {
       <Router>
         <Switch>
           <Route path="/login" component={Login} />
-          <Route path="/" component={Home} />
+          <Route path="/home" component={Home} />
+          <Route path="/videolist" component={VideoList} />
         </Switch>
       </Router>
     </ApolloProvider>
