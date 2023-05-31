@@ -12,7 +12,7 @@ const userSchema = new Schema({
     required: "You must enter a name.",
     trim: true,
   },
-  userName: {
+  username: {
     type: String,
     required: "Enter a Username",
     unique: true,
