@@ -27,11 +27,11 @@ const resolvers = {
         },
     },
     Mutation: {
-        addUser: async (parent, { username, email, password }) => {
+        addUser: async (parent, { firstName, lastName, username, email, password }) => {
             // Password hashing
             const hashedPassword = await bcrypt.hash(password, 10);
 
-            const user = new User({ username, email, password: hashedPassword });
+            const user = new User({ firstName, lastName, username, email, password: hashedPassword });
             await user.save();
 
             // generate JWT

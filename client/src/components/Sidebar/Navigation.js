@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Header.css";
+import "./Sidebar.css";
+
 function Navigation() {
   return (
     <nav>
-      <ul>
+      <ul className="nav-links">
         <li>
           <Link to="/home">Home</Link>
+        </li>
+        <li>
+          <Link to="/profile">Profile</Link>
         </li>
         <li>
           <Link to="/videolist">VideoList</Link>
@@ -18,7 +22,7 @@ function Navigation() {
           <Link to="/videoupload">VideoUpload</Link>
         </li>
         <li>
-          <Link to="/logout">LogOut</Link>
+          <Link to="/logout">Logout</Link>
         </li>
       </ul>
     </nav>
