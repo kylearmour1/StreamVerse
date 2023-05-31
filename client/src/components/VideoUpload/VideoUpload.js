@@ -30,7 +30,7 @@ function VideoUpload() {
   };
 
   return (
-    <div className="video-upload-page">
+    <div className="video-upload">
       <h2>Upload a Video</h2>
       <form onSubmit={handleSubmit}>
         <label>
