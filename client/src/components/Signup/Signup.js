@@ -16,7 +16,7 @@ const SignUp = () => {
     const [signUp, { loading, error}] = useMutation(NEW_USER_MUTATION, {
         onCompleted({ signUp}) {
             if (signUp) {
-                login
+                // login once signed up set user to login
             }
         },
     });
