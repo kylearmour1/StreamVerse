@@ -7,7 +7,7 @@ const HomePage = () => {
             <main className="main-content">
                 <section className="section">
                     <h2>About StreamVerse</h2>
-                    <p>StreamVerse is the best platform for streaming your favorite content!</p>
+                    <p>StreamVerse cdfvsdf is the best platform for streaming your favorite content!</p>
                 </section>
 
                 <section className="section">
