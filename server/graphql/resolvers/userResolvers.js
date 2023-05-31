@@ -1,29 +1,17 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Comment, Video } = require('../models');
-// const { signToken } = require('../utils/auth');
-const SECRET = process.env.JWT_SECRET; 
+const User = require('../../models/User'); 
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs'); 
 
-const resolvers = {
+// get JWT secret from environment variables
+const SECRET = process.env.JWT_SECRET; 
+
+const userResolvers = {
     Query: {
         user: async (parent, { id }) => {
             return await User.findById(id);
         },
         users: async () => {
             return await User.find();
-        },
-        video: async (parent, { id }) => {
-            return await Video.findById(id);
-        },
-        videos: async () => {
-            return await Video.find();
-        },
-        comment: async (parent, { id }) => {
-            return await Comment.findById(id);
-        },
-        comments: async () => {
-            return await Comment.find();
         },
     },
     Mutation: {
@@ -43,29 +31,20 @@ const resolvers = {
             const user = await User.findOne({ email });
             // User verification
             if (!user) {
-                throw new AuthenticationError('User not found');
+                throw new Error('User not found');
             }
             // Password verification
             const valid = await bcrypt.compare(password, user.password);
             if (!valid) {
-                throw new AuthenticationError('Invalid password');
+                throw new Error('Invalid password');
             }
         
             // generate JWT
             const token = jwt.sign({ id: user._id }, SECRET);
             return { token, user };
         },
-        addVideo: async (parent, { title, description, url, userId }) => {
-            const video = new Video({ title, description, url, userId });
-            return await video.save();
-        },
-        addComment: async (parent, { text, userId, videoId }) => {
-            const comment = new Comment({ text, userId, videoId });
-            return await comment.save();
-        },
         
     },
+};
 
-}
-
-module.exports = resolvers;
+module.exports = userResolvers;

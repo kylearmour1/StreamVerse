@@ -109,31 +109,6 @@ function ProfilePage(props) {
 }
 
 function App() {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const apiKey = process.env.REACT_APP_API_KEY;
-        const apiUrl =
-          "https://www.googleapis.com/youtube/v3/search/videos?part=snippet&maxResults=25&q=react&key=" +
-          apiKey +
-          "&type=video";
-
-        const response = await axios.get(apiUrl, {
-          params: {
-            key: apiKey,
-          },
-        });
-
-        const data = response.data;
-        console.log(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <ApolloProvider client={client}>
       <Router>

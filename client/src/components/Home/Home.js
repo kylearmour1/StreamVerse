@@ -1,16 +1,13 @@
-import React, {useState} from 'react';
-import homeCss from './Home.css';
+import React from 'react';
+import './Home.css';
 
-const Home = () => {
-    const [state] = useState({
-        name: 'Home'
-    });
+const HomePage = () => {
     return (
         <div className="container">
             <main className="main-content">
                 <section className="section">
                     <h2>About StreamVerse</h2>
-                    <p>StreamVerse is the best platform for streaming your favorite content!</p>
+                    <p>StreamVerse cdfvsdf is the best platform for streaming your favorite content!</p>
                 </section>
 
                 <section className="section">
@@ -33,4 +30,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default HomePage;
