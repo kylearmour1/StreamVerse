@@ -1,5 +1,5 @@
 {
-  "name": "streamverse",
+  "name": "StreamVerse",
   "version": "1.0.0",
   "description": "A video streaming application",
   "main": "server.js",
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "apollo-server-express": "^3.12.0",
+    "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -16,7 +17,7 @@
     "graphql": "^16.6.0",
     "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.1.1",
+    "mongoose": "^7.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2"
