@@ -2,8 +2,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const jwt = require('jsonwebtoken');
 
-const typeDefs = require('./graphql/schema/schema');
-const resolvers = require('./graphql/resolvers');
+const { typeDefs, resolvers } = require('./schemas/index');
 
 const SECRET = process.env.JWT_SECRET; 
 const cors = require('cors');
