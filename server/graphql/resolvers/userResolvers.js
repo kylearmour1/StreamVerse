@@ -2,6 +2,8 @@ const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs'); 
 
+
+
 // get JWT secret from environment variables
 const SECRET = process.env.JWT_SECRET; 
 
@@ -15,11 +17,11 @@ const userResolvers = {
         },
     },
     Mutation: {
-        addUser: async (parent, { firstName, lastName, username, email, password }) => {
+        addUser: async (parent, { username, password }) => {
             // Password hashing
             const hashedPassword = await bcrypt.hash(password, 10);
 
-            const user = new User({ firstName, lastName, username, email, password: hashedPassword });
+            const user = new User({ username, password: hashedPassword });
             await user.save();
 
             // generate JWT
@@ -27,8 +29,8 @@ const userResolvers = {
             
             return { token, user };
         },
-        login: async (parent, { email, password }) => {
-            const user = await User.findOne({ email });
+        login: async (parent, { username, password }) => {
+            const user = await User.findOne({ username });
             // User verification
             if (!user) {
                 throw new Error('User not found');
