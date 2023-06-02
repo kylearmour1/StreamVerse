@@ -38,7 +38,7 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): User
     addVideo(userId: ID!, title: String!, description: String, url: String!): Video
     addComment(userId: ID!, videoId: ID!, text: String!): Comment
-    login(username: String!, password: String!): User
+    login(email: String!, password: String!): User
     # Further mutations for updating and deleting
 }
 

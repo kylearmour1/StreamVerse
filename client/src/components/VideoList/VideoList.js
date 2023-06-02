@@ -26,5 +26,5 @@ const VideoList = () => {
     </div>
   );
 };
-<div></div>
+
 export default VideoList;

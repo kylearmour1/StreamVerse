@@ -63,7 +63,6 @@ function VideoListPage(props) {
   );
 }
 
-
 function VideoPlayerPage(props) {
   return (
     <React.Fragment>
