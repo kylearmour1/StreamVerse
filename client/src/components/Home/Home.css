@@ -7,12 +7,12 @@
     padding: 20px;
     color: #fff;
     background-image: linear-gradient(black, rgba(0, 0, 0, 0.795));
-
 }
 
 .main-content {
     width: 100%;
     max-width: 1200px;
+    margin-bottom: 50px;
 }
 
 .section {
@@ -30,16 +30,16 @@
 }
 
 .stream-card {
-    width: calc(50% - 10px);
+    width: calc((100% / 2) - 10px - 20px);
     border: 1px solid #333;
-    margin: 10px 0;
+    margin: 10px;
     padding: 20px;
     border-radius: 10px;
     background: #2e3236;
+    overflow: hidden; 
 }
 
-.footer {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
+.stream-card video {
+    width: 100%; 
+    height: auto; 
 }
