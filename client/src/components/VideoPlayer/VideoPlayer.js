@@ -11,8 +11,8 @@ function VideoPlayer({ video }) {
         <div className="video-player">
             <h2>{video.title}</h2>
             <iframe
-                src={`https://www.youtube.com/embed/${video.id}`}
-                title={video.title}
+                src={`https://www.youtube.com/embed/${id.videoId}`}
+                title={snippet.title}
                 allow="autoplay; encrypted-media" 
                 allowFullScreen
             />
