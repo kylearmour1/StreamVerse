@@ -4,15 +4,12 @@
   "description": "A video streaming application",
   "main": "server.js",
   "scripts": {
-<<<<<<< HEAD
-    "watch": "nodemon",
-=======
     "watch": "nodemon server.js",
->>>>>>> 6e22e363c038bebb9e1287e69691c462073bb2f2
     "start": "node server.js"
   },
   "dependencies": {
     "apollo-server-express": "^3.6.2",
+    "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -22,11 +19,8 @@
     "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.2.1",
-<<<<<<< HEAD
     "multer": "^1.4.5-lts.1",
-=======
     "nodemon": "^2.0.22",
->>>>>>> 6e22e363c038bebb9e1287e69691c462073bb2f2
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2"
