@@ -19,7 +19,7 @@ function Navigation() {
           <Link to="/videoplayer">VideoPlayer</Link>
         </li>
         <li>
-          <Link to="/videoupload">VideoUpload</Link>
+          <Link to="/editprofile">EditProfile</Link>
         </li>
         <li>
           <Link to="/logout">Logout</Link>

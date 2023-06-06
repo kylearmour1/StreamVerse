@@ -9,6 +9,9 @@ function Sidebar() {
         setExpanded(!expanded);
     };
 
+
+
+
     return (
         <>
             <button onClick={toggleSidebar} style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 1 }}>
@@ -31,3 +34,6 @@ function Sidebar() {
 }
 
 export default Sidebar;
+
+
+
