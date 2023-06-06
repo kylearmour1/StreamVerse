@@ -2,6 +2,8 @@ const { gql } = require('apollo-server-express')
 const typeDefs = gql`
     type User {
         id: ID!
+        firstName: String!
+        lastName: String!
         username: String!
         email: String!
         videos: [Video]
@@ -12,13 +14,15 @@ const typeDefs = gql`
         title: String!
         description: String
         url: String!
+        # uploadDate: Date!
         comments: [Comment]
     }
+
     type Comment {
     id: ID!
-    text: String!
-    video: Video!
-    user: User!
+    commenttText: String!
+    video: [Video]
+    user: [User]
 }
 
 

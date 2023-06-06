@@ -119,7 +119,7 @@ function App() {
           <Route path="/videoupload" component={VideoUploadPage} />
           <Route path="/logout" component={LogoutPage} />
           <Route path="/profile" component={ProfilePage} />
-          <Route exact path="/" component={Login} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </Router>
     </ApolloProvider>
