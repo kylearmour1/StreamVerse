@@ -8,7 +8,7 @@ import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import VideoList from "./components/VideoList/VideoList";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
-import VideoUpload from "./components/VideoUpload/VideoUpload";
+import EditProfile from "./components/EditProfile/EditProfile";
 import Logout from "./components/Logout/Logout";
 import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -86,12 +86,13 @@ function VideoPlayerPage(props) {
   );
 }
 
-function VideoUploadPage(props) {
+
+function EditProfilePage(props) {
   return (
     <React.Fragment>
       <Sidebar />
       <Header />
-      <VideoUpload {...props} />
+      <EditProfile {...props} />
       <Footer />
     </React.Fragment>
   );
@@ -127,7 +128,7 @@ function App() {
           <Route path="/home" component={HomePage} />
           <Route path="/videolist" component={VideoListPage} />
           <Route path="/videoplayer" component={VideoPlayerPage} />
-          <Route path="/videoupload" component={VideoUploadPage} />
+          <Route path="/editprofile" component={EditProfilePage} />
           <Route path="/logout" component={LogoutPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route exact path="/login" component={Login} />
