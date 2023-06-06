@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
 import client from "./apolloClient";
@@ -13,20 +14,32 @@ import Logout from "./components/Logout/Logout";
 import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
+import Comments from "./components/Comments/Comments";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// const apiEndpoint = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=dog&key=AIzaSyA1Jk0GTkv9Z2tMkEPhT4_N9IAzQ_vb8cg";
-
-
-
 function HomePage(props) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleChanges = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Is this working?:", searchQuery);
+    setSearchQuery("");
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const apiKey = process.env.REACT_APP_API_KEY;
-        const apiEndpoint = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=dog&key=AIzaSyA1Jk0GTkv9Z2tMkEPhT4_N9IAzQ_vb8cg";
+        const apiKey = process.env.REACT_APP_API_KEY;
+        const apiUrl = `https://www.googleapis.com/youtube/v3/search/videos?part=snippet&maxResults=25&q=${searchQuery}&key=${apiKey}&type=video`;
 
-        const response = await axios.get(apiEndpoint);
+        const response = await axios.get(apiUrl, {
+          params: {
+            key: apiKey,
+          },
+        });
 
         const data = response.data;
         console.log(data);
@@ -40,7 +53,11 @@ function HomePage(props) {
   return (
     <React.Fragment>
       <Sidebar />
-      <Header />
+      <Header
+        searchQuery={searchQuery}
+        handleChanges={handleChanges}
+        handleSubmit={handleSubmit}
+      />
       <Home {...props} />
       <Footer />
     </React.Fragment>
@@ -63,6 +80,7 @@ function VideoPlayerPage(props) {
     <React.Fragment>
       <Sidebar />
       <Header />
+      <Comments />
       <VideoPlayer {...props} />
       <Footer />
     </React.Fragment>
@@ -121,7 +139,7 @@ function App() {
           <Route path="/videoupload" component={VideoUploadPage} />
           <Route path="/logout" component={LogoutPage} />
           <Route path="/profile" component={ProfilePage} />
-          <Route exact path="/" component={Login} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </Router>
     </ApolloProvider>
