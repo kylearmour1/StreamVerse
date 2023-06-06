@@ -1,15 +1,19 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const jwt = require('jsonwebtoken');
+const multer = require('multer');
+const cors = require('cors');
 
 const typeDefs = require('./graphql/schema/schema');
 const resolvers = require('./graphql/resolvers');
 
 const SECRET = process.env.JWT_SECRET; 
-const cors = require('cors');
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: 'http://localhost:3000' 
+}));
 
 const authMiddleware = (req, res, next) => {
   const token = req.headers.authorization;
@@ -21,6 +25,18 @@ const authMiddleware = (req, res, next) => {
 };
 
 app.use(authMiddleware);
+
+app.use('/uploads', express.static('uploads'));
+
+// Configure multer for handling file uploads
+const upload = multer({ dest: 'uploads/' });
+
+app.post('/upload', upload.single('file'), (req, res) => {  
+  console.log(req.file);
+  // updated this line to return filename in the response
+  res.json({ filename: req.file.filename });
+});
+
 
 async function startServer() {
   const server = new ApolloServer({
@@ -40,5 +56,3 @@ async function startServer() {
 }
 
 startServer();
-
-
