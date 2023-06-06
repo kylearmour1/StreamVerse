@@ -39,8 +39,8 @@ const resolvers = {
             
             return { token, user };
         },
-        login: async (parent, { email, password }) => {
-            const user = await User.findOne({ email });
+        login: async (parent, { username, password }) => {
+            const user = await User.findOne({ username });
             // User verification
             if (!user) {
                 throw new AuthenticationError('User not found');
