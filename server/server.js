@@ -11,9 +11,9 @@ const SECRET = process.env.JWT_SECRET;
 
 const app = express();
 
-// app.use(cors({
-//   origin: 'http://127.0.0.1:3000' 
-// }));
+app.use(cors({
+  origin: 'http://127.0.0.1:3000' 
+}));
 
 const authMiddleware = (req, res, next) => {
   const token = req.headers.authorization;
