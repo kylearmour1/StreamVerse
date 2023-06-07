@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
 import { NEW_USER_MUTATION } from '../graphql/mutations';
 import './Signup.css';
 import Auth from '../../utils/auth';
@@ -40,9 +41,12 @@ const SignUp = () => {
     return (
         <div className='card'>
             <div className='card-body'>
-                {/* {loading ? (
-                    <div>Loading</div>
-                ) : ( */}
+            {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
         <div className='signUp-container'>
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit}>
@@ -94,8 +98,9 @@ const SignUp = () => {
                 <button className='submit' type="submit">Submit</button>
             </form>
         </div>
-        
+            )}
         </div>
+            
         {error && <div>Something went wrong..</div>}
         </div>
     );
