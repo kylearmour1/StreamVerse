@@ -14,6 +14,7 @@ import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import Comments from "./components/Comments/Comments";
+import SignUp from "./components/Signup/Signup"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function HomePage(props) {
@@ -132,6 +133,7 @@ function App() {
           <Route path="/logout" component={LogoutPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route exact path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
         </Switch>
       </Router>
     </ApolloProvider>

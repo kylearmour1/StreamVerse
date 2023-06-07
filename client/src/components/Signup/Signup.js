@@ -79,6 +79,7 @@ const SignUp = () => {
                     onChange={(e) => setFormData.email(e.target.value)}>
                     </input>
                 </label>
+                <button className='submit' type="submit">Submit</button>
             </form>
         </div>
         )}
