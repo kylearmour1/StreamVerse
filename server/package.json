@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A video streaming application",
   "main": "server.js",
+  "proxy": "http://127.0.0.1:3001",
   "scripts": {
     "watch": "nodemon server.js",
     "start": "node server.js"
