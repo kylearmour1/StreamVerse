@@ -54,6 +54,7 @@ const SignUp = () => {
                     First Name:
                     <input 
                     className='firstName-input'
+                    name='firstName'
                     type="text"
                     value={formData.firstName}
                     onChange={handleChange}>
@@ -63,6 +64,7 @@ const SignUp = () => {
                     Last Name:
                     <input 
                     className='lasttName-input'
+                    name='lastName'
                     type="text"
                     value={formData.lastName}
                     onChange={handleChange}>
@@ -72,6 +74,7 @@ const SignUp = () => {
                     Username:
                     <input 
                     className='username-input'
+                    name='username'
                     type="text"
                     value={formData.username}
                     onChange={handleChange}>
@@ -81,7 +84,8 @@ const SignUp = () => {
                     Password:
                     <input 
                     className='password-input'
-                    type="text"
+                    name='password'
+                    type="password"
                     value={formData.password}
                     onChange={handleChange}>
                     </input>
@@ -90,6 +94,7 @@ const SignUp = () => {
                     Email:
                     <input 
                     className='email-input'
+                    name='email'
                     type="text"
                     value={formData.email}
                     onChange={handleChange}>
