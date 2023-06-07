@@ -12,7 +12,7 @@ const SECRET = process.env.JWT_SECRET;
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:3000' 
+  origin: 'https://127.0.0.1:3000' 
 }));
 
 const authMiddleware = (req, res, next) => {
@@ -51,7 +51,7 @@ async function startServer() {
 
   const PORT = process.env.PORT || 3001;
   app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}${server.graphqlPath}`);
+    console.log(`Server is running at https://localhost:${PORT}${server.graphqlPath}`);
   });
 }
 

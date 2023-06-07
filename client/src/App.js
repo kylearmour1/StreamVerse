@@ -9,11 +9,10 @@ import Header from "./components/Header/Header";
 import VideoList from "./components/VideoList/VideoList";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import EditProfile from "./components/EditProfile/EditProfile";
-import Logout from "./components/Logout/Logout";
 import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
-import Comments from "./components/Comments/Comments";
+// import Comments from "./components/Comments/Comments";
 import SignUp from "./components/Signup/Signup"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -32,7 +31,7 @@ function HomePage(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiKey = process.env.REACT_APP_API_KEY;
+        const apiKey = process.env.YOUTUBE_API_KEY;
         const apiUrl = `https://www.googleapis.com/youtube/v3/search/videos?part=snippet&maxResults=25&q=${searchQuery}&key=${apiKey}&type=video`;
 
         const response = await axios.get(apiUrl, {
@@ -49,7 +48,7 @@ function HomePage(props) {
     };
 
     fetchData();
-  }, []);
+  }, [searchQuery]);
   return (
     <React.Fragment>
       <Sidebar />
@@ -80,7 +79,7 @@ function VideoPlayerPage(props) {
     <React.Fragment>
       <Sidebar />
       <Header />
-      <Comments />
+      {/* <Comments /> */}
       <VideoPlayer {...props} />
       <Footer />
     </React.Fragment>
@@ -94,17 +93,6 @@ function EditProfilePage(props) {
       <Sidebar />
       <Header />
       <EditProfile {...props} />
-      <Footer />
-    </React.Fragment>
-  );
-}
-
-function LogoutPage(props) {
-  return (
-    <React.Fragment>
-      <Header />
-      <Sidebar />
-      <Logout {...props} />
       <Footer />
     </React.Fragment>
   );
@@ -130,7 +118,6 @@ function App() {
           <Route path="/videolist" component={VideoListPage} />
           <Route path="/videoplayer" component={VideoPlayerPage} />
           <Route path="/editprofile" component={EditProfilePage} />
-          <Route path="/logout" component={LogoutPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route exact path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
