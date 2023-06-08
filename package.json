@@ -22,6 +22,7 @@
         "@fortawesome/react-fontawesome": "^0.2.0",
         "apollo-server-express": "^3.12.0",
         "axios": "^1.4.0",
-        "bcrypt": "^5.1.0"
+        "bcrypt": "^5.1.0",
+        "diagnose-endpoint": "^1.1.0"
     }
 }

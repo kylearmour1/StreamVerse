@@ -1,7 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Comment, Video } = require('../models');
 // const { signToken } = require('../utils/auth');
-const SECRET = process.env.JWT_SECRET; 
+const SECRET = `${process.env.JWT_SECRET}`;
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs'); 
 
