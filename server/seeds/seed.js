@@ -1,32 +1,24 @@
 const db = require('../config/connection');
-const { User, Thought, Comment, Video } = require('../models');
-;
+const { User, Video, Comment } = require('../models');
 const userSeeds = require('./userSeeds.json');
-const thoughtSeeds = require('./thoughtSeeds.json');
+const videoSeeds = require('./videoSeeds.json');
+const commentSeeds = require('./commentSeeds.json');
 
 db.once('open', async () => {
   try {
-    // await Thought.deleteMany({});
-    // await User.deleteMany({});
-
+    await User.deleteMany({});
     await User.create(userSeeds);
 
-    for (let i = 0; i < thoughtSeeds.length; i++) {
-      const { _id, thoughtAuthor } = await Thought.create(thoughtSeeds[i]);
-      const user = await User.findOneAndUpdate(
-        { username: thoughtAuthor },
-        {
-          $addToSet: {
-            thoughts: _id,
-          },
-        }
-      );
-    }
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
+    await Video.deleteMany({});
+    await Video.create(videoSeeds);
 
-  console.log('all done!');
-  process.exit(0);
+    await Comment.deleteMany({});
+    await Comment.create(commentSeeds);
+    
+    console.log('All seeds planted successfully!');
+    process.exit(0);
+  } catch (err) {
+    throw err;
+  }
 });
+

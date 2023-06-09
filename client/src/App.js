@@ -14,7 +14,9 @@ import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import Comments from "./components/Comments/Comments";
+import history from "./history"
 import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 function HomePage(props) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -123,16 +125,19 @@ function ProfilePage(props) {
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <Switch>
-          <Route path="/home" component={HomePage} />
-          <Route path="/videolist" component={VideoListPage} />
-          <Route path="/videoplayer" component={VideoPlayerPage} />
-          <Route path="/editprofile" component={EditProfilePage} />
-          <Route path="/logout" component={LogoutPage} />
-          <Route path="/profile" component={ProfilePage} />
-          <Route exact path="/login" component={Login} />
-        </Switch>
+      <Router history={history}>
+      <Switch>
+    <Route path="/home" component={HomePage} />
+    <Route path="/videolist" component={VideoListPage} />
+    <Route path="/videoplayer" component={VideoPlayerPage} />
+    <Route path="/editprofile" component={EditProfilePage} />
+    <Route path="/logout" component={LogoutPage} />
+    <Route path="/profile" component={ProfilePage} />
+    <Route path="/" component={Login} />
+  
+    
+</Switch>
+
       </Router>
     </ApolloProvider>
   );
