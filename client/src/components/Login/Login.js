@@ -1,24 +1,37 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_MUTATION } from '../graphql/mutations';
+
+import Auth from '../../utils/auth';
+
 import './Login.css';
 
 
-const Login = () => {
+const Login = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   
-  const [login, { loading, error }] = useMutation(LOGIN_MUTATION, {
-    onCompleted({ login }) {
-      if (login) {
-        console.log(login);
-      }
-    },
-  });
+  const [login, { loading, error }] = useMutation(LOGIN_MUTATION
+    // , {
+    // onCompleted({ login }) {
+    //   if (login) {
+    //     console.log(login);
+    //   }
+    // },
+  // }
+  );
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    login({ variables: { username, password } });
+    // login({ variables: { username, password } });
+    try {
+      const { data } = await login({
+        variables: { username, password},
+      });
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
@@ -29,6 +42,7 @@ const Login = () => {
           Username:
           <input
             className="login-input" 
+            name={username}
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -38,6 +52,7 @@ const Login = () => {
           Password:
           <input
             className="login-input" 
+            name={password}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
