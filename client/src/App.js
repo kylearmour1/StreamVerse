@@ -16,7 +16,7 @@ import Footer from "./components/Footer/Footer";
 import Comments from "./components/Comments/Comments";
 import history from "./history"
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
+import SignUp from "./components/Signup/Signup";
 
 function HomePage(props) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -133,6 +133,7 @@ function App() {
     <Route path="/editprofile" component={EditProfilePage} />
     <Route path="/logout" component={LogoutPage} />
     <Route path="/profile" component={ProfilePage} />
+    <Route path="/signup" component={SignUp} />
     <Route path="/" component={Login} />
   
     
