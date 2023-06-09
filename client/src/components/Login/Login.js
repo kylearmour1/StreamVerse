@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import './Login.css';
 
 
-const Login = (props) => {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
@@ -24,17 +24,9 @@ const Login = (props) => {
 
  
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    // login({ variables: { username, password } });
-    try {
-      const { data } = await login({
-        variables: { username, password},
-      });
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
-    }
+    login({ variables: { username, password } });
   };
 
   return (
@@ -46,7 +38,6 @@ const Login = (props) => {
           Username:
           <input
             className="login-input" 
-            name={username}
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -56,7 +47,6 @@ const Login = (props) => {
           Password:
           <input
             className="login-input" 
-            name={password}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
