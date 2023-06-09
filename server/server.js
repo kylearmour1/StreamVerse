@@ -1,7 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-const multer = require('multer');
+// const multer = require('multer');
 const jwt = require('jsonwebtoken');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
@@ -18,14 +18,14 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-const upload = multer({ dest: 'uploads/' });
+// const upload = multer({ dest: 'uploads/' });
 
-app.use('/uploads', express.static('uploads'));
+// app.use('/uploads', express.static('uploads'));
 
-app.post('/upload', upload.single('file'), (req, res) => {  // Handle file uploads
-  console.log(req.file);
-  res.send('File uploaded successfully');
-});
+// app.post('/upload', upload.single('file'), (req, res) => {  // Handle file uploads
+//   console.log(req.file);
+//   res.send('File uploaded successfully');
+// });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
