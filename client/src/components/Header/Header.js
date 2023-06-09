@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
-
 
 function Header (props){
   const {searchQuery,handleChanges, handleSubmit } = props
@@ -14,7 +13,7 @@ function Header (props){
   //   console.log("Is this working?:", searchQuery);
   //   setSearchQuery("");
   // };
-  
+
   return (
     <header>
       <div className="header-container">

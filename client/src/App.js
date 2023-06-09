@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
@@ -109,12 +110,20 @@ function LogoutPage(props) {
   );
 }
 
-function ProfilePage(props) {
+function ProfilePage() {
+  const [loggedInUser] = React.useState({
+    name: "name",
+    username: "username",
+    photo: "photo",
+    submittedVideos: "vids",
+    friends: ["friend1", "friend2"],
+    notifications: ["notifaction1", "notifaction2"],
+  });
   return (
     <React.Fragment>
       <Sidebar />
       <Header />
-      <Profile {...props} />
+      <Profile loggedInUser={loggedInUser} />
       <Footer />
     </React.Fragment>
   );
