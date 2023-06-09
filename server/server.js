@@ -1,7 +1,8 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-// const jwt = require('jsonwebtoken');
+const multer = require('multer');
+const jwt = require('jsonwebtoken');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 const cors = require('cors');
@@ -15,6 +16,15 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
+});
+
+const upload = multer({ dest: 'uploads/' });
+
+app.use('/uploads', express.static('uploads'));
+
+app.post('/upload', upload.single('file'), (req, res) => {  // Handle file uploads
+  console.log(req.file);
+  res.send('File uploaded successfully');
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -43,3 +53,4 @@ async function startServer() {
 };
 
 startServer();
+

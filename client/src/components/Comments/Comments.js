@@ -7,7 +7,7 @@
 //   useEffect(() => {
 //     const fetchComments = async () => {
 //       try {
-//         const apiKey = process.env.YOUTUBE_API_KEY;
+//         const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
 //         const apiUrl = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${id.videoId}&key=${apiKey}`;
 
 //         const response = await axios.get(apiUrl);
