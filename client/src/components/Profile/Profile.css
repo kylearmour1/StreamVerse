@@ -1,4 +1,4 @@
-
+/* 
 .profile {
     display: flex;
     flex-direction: column;
@@ -115,4 +115,58 @@
   .dislike-button.active {
     color: #0000ff; 
   }
-  
+   */
+
+   .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    color: #fff;
+    background-image: linear-gradient(black, rgba(0, 0, 0, 0.795));
+    }
+    
+    .profile h2 {
+    margin-bottom: 20px;
+    }
+    
+    .profile form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .profile label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    }
+    
+    .profile input,
+    .profile textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #2e3236;
+    border: 1px solid #333;
+    color: #fff;
+    }
+    
+    .profile input[type="file"] {
+    padding: 6px 0;
+    }
+    
+    .profile button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    }
+    
+    .profile button:hover {
+    background-color: #555;
+    }

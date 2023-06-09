@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_MUTATION } from '../graphql/mutations';
-import history from '../../history';
+import { useHistory } from 'react-router-dom';
 import './Login.css';
 
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
   
   const [login, { loading, error }] = useMutation(LOGIN_MUTATION, {
     onCompleted: ({ login }) => {

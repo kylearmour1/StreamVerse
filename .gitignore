@@ -3,9 +3,3 @@ node_modules
 /build/
 .DS_Store
 
-
-mutation
-login
-signup
-resolvers
-typedef

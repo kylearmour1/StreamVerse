@@ -14,7 +14,7 @@ import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import Comments from "./components/Comments/Comments";
-import history from "./history";
+import history from "./history"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 

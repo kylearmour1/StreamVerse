@@ -3,7 +3,7 @@ import { setContext } from '@apollo/client/link/context';
 
 // Create an http link:
 const httpLink = createHttpLink({
-  uri: 'http://10.212.161.195:3001/graphql',
+  uri: '/graphql',
 });
 
 // Create a middleware for our every request
