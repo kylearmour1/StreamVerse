@@ -9,7 +9,6 @@ import Header from "./components/Header/Header";
 import VideoList from "./components/VideoList/VideoList";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import EditProfile from "./components/EditProfile/EditProfile";
-import Logout from "./components/Logout/Logout";
 import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
@@ -17,7 +16,7 @@ import Comments from "./components/Comments/Comments";
 import history from "./history"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import MapVideoList from "./components/MapVideoList/MapVideoList";
-
+import SignUp from "./components/Signup/Signup";
 
 function HomePage(props) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -112,17 +111,6 @@ function EditProfilePage(props) {
   );
 }
 
-function LogoutPage(props) {
-  return (
-    <React.Fragment>
-      <Header />
-      <Sidebar />
-      <Logout {...props} />
-      <Footer />
-    </React.Fragment>
-  );
-}
-
 function ProfilePage(props) {
   return (
     <React.Fragment>
@@ -143,9 +131,9 @@ function App() {
     <Route path="/videolist" component={VideoListPage} />
     <Route path="/videoplayer" component={VideoPlayerPage} />
     <Route path="/editprofile" component={EditProfilePage} />
-    <Route path="/logout" component={LogoutPage} />
     <Route path="/profile" component={ProfilePage} />
-    <Route path="/" component={Login} />
+    <Route path="/signup" component={SignUp} />
+    <Route path="/login" component={Login} />
   
     
 </Switch>

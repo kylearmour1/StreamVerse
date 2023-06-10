@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
 import { NEW_USER_MUTATION } from '../graphql/mutations';
 import './Signup.css';
+import Auth from '../../utils/auth';
 
 const SignUp = () => {
     const [formData, setFormData] = useState({
@@ -10,27 +12,40 @@ const SignUp = () => {
         username: '',
         password: '',
         email: '',
-    })
-    
-    const [signUp, { loading, error}] = useMutation(NEW_USER_MUTATION, {
-        onCompleted({ signUp}) {
-            if (signUp) {
-                // login once signed up set user to login
-            }
-        },
     });
+    
+    const [signUp, { error, data}] = useMutation(NEW_USER_MUTATION);
 
-    const handleSubmit = (event) => {
+       const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+       };
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        signUp({ variables: { firstName, lastName, username, password, email} });
+        try {
+            const { data } = await signUp({
+                variables: { ...formData } 
+            });
+
+            Auth.login(data.addUser.token);
+        } catch (e) {
+            console.log(e);
+        }
     };
 
     return (
         <div className='card'>
             <div className='card-body'>
-                {loading ? (
-                    <div>Loading</div>
-                ) : (
+            {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/home">back to the homepage.</Link>
+              </p>
+            ) : (
         <div className='signUp-container'>
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit}>
@@ -38,51 +53,58 @@ const SignUp = () => {
                     First Name:
                     <input 
                     className='firstName-input'
+                    name='firstName'
                     type="text"
                     value={formData.firstName}
-                    onChange={(e) => setFormData.firstName(e.target.value)}>
+                    onChange={handleChange}>
                     </input>
                 </label>
                 <label>
                     Last Name:
                     <input 
                     className='lasttName-input'
+                    name='lastName'
                     type="text"
                     value={formData.lastName}
-                    onChange={(e) => setFormData.lastName(e.target.value)}>
+                    onChange={handleChange}>
                     </input>
                 </label>
                 <label>
                     Username:
                     <input 
                     className='username-input'
+                    name='username'
                     type="text"
                     value={formData.username}
-                    onChange={(e) => setFormData.username(e.target.value)}>
+                    onChange={handleChange}>
                     </input>
                 </label>
                 <label>
                     Password:
                     <input 
                     className='password-input'
-                    type="text"
+                    name='password'
+                    type="password"
                     value={formData.password}
-                    onChange={(e) => setFormData.password(e.target.value)}>
+                    onChange={handleChange}>
                     </input>
                 </label>
                 <label>
                     Email:
                     <input 
                     className='email-input'
+                    name='email'
                     type="text"
                     value={formData.email}
-                    onChange={(e) => setFormData.email(e.target.value)}>
+                    onChange={handleChange}>
                     </input>
                 </label>
+                <button className='submit' type="submit">Submit</button>
             </form>
         </div>
-        )}
+            )}
         </div>
+            
         {error && <div>Something went wrong..</div>}
         </div>
     );
