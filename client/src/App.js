@@ -9,7 +9,6 @@ import Header from "./components/Header/Header";
 import VideoList from "./components/VideoList/VideoList";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import EditProfile from "./components/EditProfile/EditProfile";
-import Logout from "./components/Logout/Logout";
 import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
@@ -100,17 +99,6 @@ function EditProfilePage(props) {
   );
 }
 
-function LogoutPage(props) {
-  return (
-    <React.Fragment>
-      <Header />
-      <Sidebar />
-      <Logout {...props} />
-      <Footer />
-    </React.Fragment>
-  );
-}
-
 function ProfilePage(props) {
   return (
     <React.Fragment>
@@ -131,7 +119,6 @@ function App() {
     <Route path="/videolist" component={VideoListPage} />
     <Route path="/videoplayer" component={VideoPlayerPage} />
     <Route path="/editprofile" component={EditProfilePage} />
-    <Route path="/logout" component={LogoutPage} />
     <Route path="/profile" component={ProfilePage} />
     <Route path="/signup" component={SignUp} />
     <Route path="/" component={Login} />

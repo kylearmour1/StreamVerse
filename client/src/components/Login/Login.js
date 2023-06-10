@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_MUTATION } from '../graphql/mutations';
 import { useHistory } from 'react-router-dom';
 import './Login.css';
+import Auth from '../../utils/auth';
 
 
 const Login = () => {
