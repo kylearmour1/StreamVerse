@@ -32,6 +32,7 @@ const SignUp = () => {
             });
 
             Auth.login(data.token);
+            console.log(data.token);
         } catch (e) {
             console.log(e);
         }

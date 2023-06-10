@@ -25,9 +25,14 @@ const Login = () => {
 
  
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    login({ variables: { username, password } });
+    try {
+      login({ variables: { username, password } });
+      Auth.login(username.token);
+     } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
