@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
 import client from "./apolloClient";
-import axios from "axios";
+// import axios from "axios";
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
@@ -16,6 +16,7 @@ import Footer from "./components/Footer/Footer";
 import Comments from "./components/Comments/Comments";
 import history from "./history"
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import MapVideoList from "./components/MapVideoList/MapVideoList";
 
 
 function HomePage(props) {
@@ -23,34 +24,45 @@ function HomePage(props) {
   const handleChanges = (event) => {
     setSearchQuery(event.target.value);
   };
-
+  
   const handleSubmit = (event) => {
+    const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
     event.preventDefault();
     console.log("Is this working?:", searchQuery);
     setSearchQuery("");
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=dog&key=${apiKey}`)
+      .then((data)=>{
+        console.log(data.json())
+      })
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const apiKey = process.env.REACT_APP_API_KEY;
-        const apiUrl = `https://www.googleapis.com/youtube/v3/search/videos?part=snippet&maxResults=25&q=${searchQuery}&key=${apiKey}&type=video`;
+//   useEffect(() => {
+//     const fetchData = () => {
+//       try {
+//         const apiKey = process.env.YOUTUBE_API_KEY;
+//         const apiUrl = `https://www.googleapis.com/youtube/v3/search/videos?part=snippet&maxResults=25&q=${searchQuery}&key=${apiKey}&type=video`;
+//         console.log(apiUrl)
+//         const response = axios.get(apiUrl, {
+//           params: {
+//             key: apiKey,
+//             headers: {
+//               'Access-Control-Allow-Origin': "*",
+//               'Content-Type':'application/json'
+//             },
+//             withCredentials: true,
+//             credntials:'same-origin'
+//           },
+//         });
 
-        const response = await axios.get(apiUrl, {
-          params: {
-            key: apiKey,
-          },
-        });
+//         const data = response.data;
+//         console.log(data);
+//       } catch (error) {
+//         console.error(error);
+//       }
+//     };
 
-        const data = response.data;
-        console.log(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, []);
+//     fetchData();
+//   }, []);
   return (
     <React.Fragment>
       <Sidebar />
@@ -70,7 +82,7 @@ function VideoListPage(props) {
     <React.Fragment>
       <Sidebar />
       <Header />
-      <VideoList {...props} />
+      <MapVideoList {...props} />
       <Footer />
     </React.Fragment>
   );
