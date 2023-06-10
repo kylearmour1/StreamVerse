@@ -36,8 +36,6 @@ function Header (props){
           />
           <button type="submit">Video Search</button>
         </form>
-
-        <span>Hey there, {Auth.getProfile().data.username}!</span>
         <button className="btn btn-lg btn-light m-2" onClick={logout}>
          Logout
         </button>
