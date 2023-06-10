@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_MUTATION } from '../graphql/mutations';
 import { useHistory } from 'react-router-dom';
 import './Login.css';
-import Auth from '../../utils/auth';
+//  import Auth from '../../utils/auth';
 
 
 const Login = () => {
@@ -25,14 +25,14 @@ const Login = () => {
 
  
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    try {
+    // try {
       login({ variables: { username, password } });
-      Auth.login(username.token);
-     } catch (e) {
-      console.error(e);
-    }
+      // Auth.login(username.token);
+    //  } catch (e) {
+    //   console.error(e);
+    // }
   };
 
   return (
