@@ -11,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const history = useHistory();
   
-  const [login, { error, data }] = useMutation(LOGIN_MUTATION);
+  const [login] = useMutation(LOGIN_MUTATION);
   //   , {
   //   onCompleted: ({ login }) => {
   //     console.log('Completed!, ', login);
