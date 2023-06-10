@@ -158,17 +158,47 @@ import Header from "./components/Header/Header";
 import VideoList from "./components/VideoList/VideoList";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import EditProfile from "./components/EditProfile/EditProfile";
-import Logout from "./components/Logout/Logout";
 import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import Comments from "./components/Comments/Comments";
-import Signup from "./components/Signup/Signup"
-import history from "./history";
+import history from "./history"
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import SignUp from "./components/Signup/Signup";
 
-function App() {
-  const [uploadedVideos, setUploadedVideos] = useState([]);
-  
+function HomePage(props) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleChanges = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Is this working?:", searchQuery);
+    setSearchQuery("");
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const apiKey = process.env.REACT_APP_API_KEY;
+        const apiUrl = `https://www.googleapis.com/youtube/v3/search/videos?part=snippet&maxResults=25&q=${searchQuery}&key=${apiKey}&type=video`;
+
+        const response = await axios.get(apiUrl, {
+          params: {
+            key: apiKey,
+          },
+        });
+
+        const data = response.data;
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <ApolloProvider client={client}>
       <Router history={history}>
