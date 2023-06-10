@@ -12,6 +12,27 @@
     "username": "janedoe",
     "email": "jane@example.com",
     "password": "password123"
+  },
+  {
+    "firstName": "Kyle",
+    "lastName": "Armour",
+    "username": "kylearmour",
+    "email": "kyle@example.com",
+    "password": "password123"
+  },
+  {
+    "firstName": "Josh",
+    "lastName": "Armour",
+    "username": "josharmour",
+    "email": "josh@example.com",
+    "password": "password123"
+  },
+  {
+    "firstName": "Tim",
+    "lastName": "A",
+    "username": "tim",
+    "email": "tim@email.com",
+    "password": "password123"
   }
 ]
 

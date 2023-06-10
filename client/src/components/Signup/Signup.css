@@ -1,0 +1,43 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    color: #fff;
+    background-image: linear-gradient(black, rgba(0, 0, 0, 0.795));
+  }
+  
+  .card-body {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 50px;
+  }
+  
+  .signUp-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #333;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: #242629;
+  }
+  
+  .label-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .input-field {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #2e3236;
+    color: #fff;
+  }
