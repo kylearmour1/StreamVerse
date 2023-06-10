@@ -29,9 +29,9 @@ const resolvers = {
     Mutation: {
         addUser: async (parent, { firstName, lastName, username, email, password }) => {
             // Password hashing
-            const hashedPassword = await bcrypt.hash(password, 10);
+            // const hashedPassword = await bcrypt.hash(password, 10);
 
-            const user = new User({ firstName, lastName, username, email, password: hashedPassword });
+            const user = new User({ firstName, lastName, username, email, password});
             await user.save();
 
             // generate JWT
@@ -46,7 +46,7 @@ const resolvers = {
                 throw new AuthenticationError('User not found');
             }
             // Password verification
-            const valid = await bcrypt.compare(password, user.password);
+            const valid = await user.isCorrectPassword(password);
             if (!valid) {
                 throw new AuthenticationError('Invalid password');
             }
