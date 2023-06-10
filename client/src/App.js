@@ -121,7 +121,7 @@ function App() {
     <Route path="/editprofile" component={EditProfilePage} />
     <Route path="/profile" component={ProfilePage} />
     <Route path="/signup" component={SignUp} />
-    <Route path="/" component={Login} />
+    <Route path="/login" component={Login} />
   
     
 </Switch>
