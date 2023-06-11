@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // Add useEffect here
 import axios from 'axios'; 
 import './Profile.css';
+import AuthService from '../../utils/auth';
 
 const Profile = () => {
+  useEffect(() => {
+    if (!AuthService.loggedIn()) {
+      window.location.assign('/');
+    }
+  }, []);
   const user = {
     name: 'Kyle Armour',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla metus id augue semper, vel viverra magna luctus.',
