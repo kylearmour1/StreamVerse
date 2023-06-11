@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from 'react'; // 
+import React, { useState } from 'react'; // 
 import './Home.css'; 
+import Auth from "../../utils/auth";
 
 const HomePage = () => {
-  const [uploadedVideos, setUploadedVideos] = useState([]); 
-
-  useEffect(() => {
-    const storedVideos = localStorage.getItem('uploadedVideos');
-
-    if (storedVideos) {
-      setUploadedVideos(JSON.parse(storedVideos));
-    }
-  }, []);
-
+  const [uploadedVideos, setUploadedVideos] = useState([]);    
+    
   // Adding a new function to delete a video
   const deleteVideo = (videoId) => {
     // Filtering the uploadedVideos to remove the one with the given id
@@ -23,6 +16,10 @@ const HomePage = () => {
     // Saving the updated list back to localStorage
     localStorage.setItem('uploadedVideos', JSON.stringify(updatedVideos));
   };
+
+  if(!Auth.loggedIn()) {
+    window.location.assign('/login');
+  }
 
   return (
     <div className="container">
@@ -53,6 +50,8 @@ const HomePage = () => {
       </main>
     </div>
   );
+
+
 }
 
 export default HomePage;
