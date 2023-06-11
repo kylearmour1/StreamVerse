@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
 import client from "./apolloClient";
@@ -11,22 +12,11 @@ import EditProfile from "./components/EditProfile/EditProfile";
 import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
-import history from "./history"
-import SignUp from "./components/Signup/Signup";
+import history from "./history";
 
-function HomePage(props) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const handleChanges = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Is this working?:", searchQuery);
-    setSearchQuery("");
-  };
-
-
+function App() {
+  const [uploadedVideos, setUploadedVideos] = useState([]);
+  
   return (
     <React.Fragment>
       <Sidebar />
