@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 import Auth from '../../utils/auth';
 
 function Header (props){
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
 
   const {searchQuery,handleChanges, handleSubmit } = props
   // const [searchQuery, setSearchQuery] = useState("");
@@ -36,14 +32,11 @@ function Header (props){
           />
           <button type="submit">Video Search</button>
         </form>
-        <button className="btn btn-lg btn-light m-2" onClick={logout}>
-         Logout
-        </button>
         </div>
         ) : (
           <>
           <Link className="btn btn-lg btn-info m-2" to="/login">
-            Login
+            Login to find Videos
           </Link>
           <Link className="btn btn-lg btn-light m-2" to="/signup">
             Signup

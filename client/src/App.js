@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
 import client from "./apolloClient";
 import Login from "./components/Login/Login";
+import Logout from "./components/Login/Logout";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import VideoList from "./components/VideoList/VideoList";
@@ -104,6 +105,7 @@ function App() {
     <Route path="/editprofile" component={EditProfilePage} />
     <Route path="/profile" component={ProfilePage} />
     <Route path="/signup" component={SignUp} />
+    <Route path="/logout" component={Logout} />
     <Route path="/login" component={Login} />
   
     
