@@ -6,16 +6,6 @@ import Auth from '../../utils/auth';
 function Header (props){
 
   const {searchQuery,handleChanges, handleSubmit } = props
-  // const [searchQuery, setSearchQuery] = useState("");
-  // const handleChanges = (event) => {
-  //   setSearchQuery(event.target.value);
-  // };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   console.log("Is this working?:", searchQuery);
-  //   setSearchQuery("");
-  // };
   
   return (
     <header>
