@@ -14,7 +14,7 @@ const HomePage = () => {
   }, []);
 
   const fetchVideos = () => {
-    const apiKey = "AIzaSyD01a49s7izXijAlbo4Vu8py_lUlrvfcEU";
+    const apiKey = "AIzaSyCwPfZd-GUMIhn3B-vhW4fMph-XDnLMtQE";
     const maxResults = 5;
     const searchQuery = "";
 
@@ -71,7 +71,7 @@ const HomePage = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <Button variant="contained">Upload to YouTube</Button>
+                  <Button className="upload" variant="contained">Upload to YouTube</Button>
                 </a>
               </div>
               <p>
@@ -99,7 +99,7 @@ const HomePage = () => {
                   <div className="stream-card" key={video.id}>
                     <h3>{video.title}</h3>
                     <p>{video.description}</p>
-                    <img src={video.thumbnail} alt={video.title} />
+                    {/* <img src={video.thumbnail} alt={video.title} /> */}
                     <iframe
                       title={video.title}
                       src={video.videoUrl}
@@ -109,25 +109,25 @@ const HomePage = () => {
                     />
                     <div>
                       {/* Facebook */}
-                      <Button variant="contained">
+                      <Button className="shareButtons" variant="contained">
                         <a href={`https://www.facebook.com/sharer/sharer.php?u=${video.videoUrl}`} target="_blank" rel="noopener noreferrer">
                           Share on Facebook
                         </a>
                       </Button>
                       {/* Twitter */}
-                      <Button variant="contained">
+                      <Button className="shareButtons" variant="contained">
                         <a href={`https://twitter.com/intent/tweet?text=${video.title}&url=${video.videoUrl}`} target="_blank" rel="noopener noreferrer">
                           Share on Twitter
                         </a>
                       </Button>
                       {/* Email */}
-                      <Button variant="contained">
+                      <Button className="shareButtons" variant="contained">
                         <a href={`mailto:?subject=${video.title}&body=Check out this video: ${video.videoUrl}`} target="_blank" rel="noopener noreferrer">
                           Share via Email
                         </a>
                       </Button>
                       {/* SMS */}
-                      <Button variant="contained">
+                      <Button className="shareButtons" variant="contained">
                         <a href={`sms:?&body=Check out this video: ${video.videoUrl}`}>
                           Share via Text Message
                         </a>
