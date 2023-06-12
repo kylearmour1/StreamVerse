@@ -7,7 +7,7 @@ function Navigation() {
     <nav>
       <ul className="nav-links">
         <li>
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/profile">Profile</Link>
@@ -15,14 +15,13 @@ function Navigation() {
         <li>
           <Link to="/videolist">VideoList</Link>
         </li>
-        <li>
-          <Link to="/videoplayer">VideoPlayer</Link>
-        </li>
+        
         <li>
           <Link to="/editprofile">EditProfile</Link>
         </li>
         <li>
-          <Link to="/logout">Logout</Link>
+          
+          <Link to="/">Logout</Link>
         </li>
       </ul>
     </nav>
