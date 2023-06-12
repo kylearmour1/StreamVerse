@@ -59,9 +59,6 @@ function App() {
     </ThemeProvider>
     </ApolloProvider>
   );
-
-
-  
 }
 
 export default App;
