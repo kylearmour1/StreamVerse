@@ -19,7 +19,7 @@ const Login = () => {
         variables: { username, password },
       });
       Auth.login(data.login.token);
-      history.push('/home');
+      history.push('/');
     } catch (e) {
       console.error(e);
     }
