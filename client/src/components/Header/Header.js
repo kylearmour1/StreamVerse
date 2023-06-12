@@ -1,65 +1,92 @@
 import React from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
-import Auth from '../../utils/auth';
+import { Link, useLocation } from "react-router-dom";
+import Auth from "../../utils/auth";
+import { Button } from "@mui/material";
 
-function Header (props){
+function Header(props) {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
-  const {searchQuery,handleChanges, handleSubmit } = props
-  
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
+  const { searchQuery, handleChanges, handleSubmit } = props;
+
   return (
     <header>
-      <div className="header-container">
+      <div className="title-search-container">
         <h1>StreamVerse</h1>
-        {Auth.loggedIn() ? (
+        {Auth.loggedIn() && (
           <div className="form">
-        <form className="search-bar" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={handleChanges}
-          />
-          <button type="submit">Video Search</button>
-        </form>
-        </div>
+            <form className="search-bar" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={handleChanges}
+              />
+              <Button
+                variant="outlined"
+                sx={{ color: "black", borderColor: "black", fontSize: "8px", padding: "4px 8px" }}
+                type="submit"
+              >
+                Video Search
+              </Button>
+            </form>
+          </div>
+        )}
+      </div>
+      <div className="button-container">
+        {Auth.loggedIn() ? (
+          <>
+            <Link to="/logout" onClick={logout}>
+              <Button
+                variant="outlined"
+                sx={{ color: "black", borderColor: "black" }}
+              >
+                Logout
+              </Button>
+            </Link>
+            {isHomePage && (
+              <Link to="/profile">
+                <Button
+                  variant="outlined"
+                  sx={{ color: "black", borderColor: "black" }}
+                >
+                  Go to StreamVerse
+                </Button>
+              </Link>
+            )}
+          </>
         ) : (
           <>
-          <Link className="btn btn-lg btn-info m-2" to="/login">
-            Login to find Videos
-          </Link>
-          <Link className="btn btn-lg btn-light m-2" to="/signup">
-            Signup
-          </Link>
-        </>
+            <Link to="/login">
+              <Button
+                variant="outlined"
+                color="secondary"
+                sx={{ color: "black", borderColor: "black" }}
+              >
+                Login
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button
+                variant="outlined"
+                color="secondary"
+                sx={{ color: "black", borderColor: "black" }}
+              >
+                Signup
+              </Button>
+            </Link>
+          </>
         )}
       </div>
     </header>
-  )
+  );
 }
 
 export default Header;
 
-
-
-
-
-
-
-
-
-// function Header() {
-//   return (
-//     <header>
-//       <div className="header-container">
-//         <h1>StreamVerse</h1>
-//         <div className="search-bar">
-//           <input type="text" placeholder="Search..." />
-//           <button type="submit">Video Search</button>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// }
-
-// export default Header;
