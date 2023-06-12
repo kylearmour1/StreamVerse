@@ -2,20 +2,17 @@ import React, { useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
 import client from "./apolloClient";
-// import axios from "axios";
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import VideoList from "./components/VideoList/VideoList";
-import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import EditProfile from "./components/EditProfile/EditProfile";
 import Profile from "./components/Profile/Profile";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
-import Comments from "./components/Comments/Comments";
 import history from "./history"
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import MapVideoList from "./components/MapVideoList/MapVideoList";
+// import MapVideoList from "./components/MapVideoList/MapVideoList";
 import SignUp from "./components/Signup/Signup";
 
 function HomePage(props) {
@@ -81,7 +78,7 @@ function VideoListPage(props) {
     <React.Fragment>
       <Sidebar />
       <Header />
-      <MapVideoList {...props} />
+      <VideoList {...props} />
       <Footer />
     </React.Fragment>
   );
