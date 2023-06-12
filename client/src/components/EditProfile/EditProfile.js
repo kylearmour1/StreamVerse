@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AuthService from '../../utils/auth';
+import Sidebar from '../Sidebar/Sidebar';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const EditProfile = () => {
-  // Your component logic here
+  useEffect(() => {
+ 
+    if (!AuthService.loggedIn()) {
+
+      window.location.assign('/');
+    }
+  }, []);
 
   return (
-    // JSX code for the EditProfile component
-    <div>
-      {/* Your component UI elements */}
-    </div>
+    <>
+      <Sidebar />
+      <Header />
+      <div>
+  
+      </div>
+      <Footer />
+    </>
   );
 };
 
