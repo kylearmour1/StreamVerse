@@ -99,7 +99,7 @@ const HomePage = () => {
                   <div className="stream-card" key={video.id}>
                     <h3>{video.title}</h3>
                     <p>{video.description}</p>
-                    <img src={video.thumbnail} alt={video.title} />
+                    {/* <img src={video.thumbnail} alt={video.title} /> */}
                     <iframe
                       title={video.title}
                       src={video.videoUrl}
