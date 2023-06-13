@@ -8,6 +8,7 @@ import VideoList from "./components/VideoList/VideoList";
 import Signup from "./components/Signup/Signup";
 import EditProfile from "./components/EditProfile/EditProfile";
 import Profile from "./components/Profile/Profile";
+import Logout from "./components/Login/Logout";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -50,6 +51,9 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/logout">
+            <Logout />
+          </Route>
         </Switch>
       </Router>
 
@@ -59,7 +63,6 @@ function App() {
     </ThemeProvider>
     </ApolloProvider>
   );
-
 
   
   
