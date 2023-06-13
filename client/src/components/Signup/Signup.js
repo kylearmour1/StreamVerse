@@ -47,7 +47,7 @@ const SignUp = () => {
           </p>
         ) : (
           <div className="signUp-container">
-            <h1 className="center">Join the <span href="/Home"className="signupName">StreamVerse</span>Community!</h1>
+            <h1 className="center">Join the <span href="/"className="signupName">StreamVerse</span>Community!</h1>
 
             <p className="center">Fill out the information below and create your StreamVerse account!</p>
             <form onSubmit={handleSubmit}>

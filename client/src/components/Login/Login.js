@@ -23,7 +23,6 @@ const Login = () => {
     } catch (e) {
       console.error(e);
     }
-    // history.push('/home');
   };
 
   return (

@@ -44,6 +44,9 @@ function App() {
           <Route path="/logout">
             <Logout />
           </Route>
+          <Route path='*'>
+          <Home />
+            </Route>
         </Switch>
       </Router>
 
