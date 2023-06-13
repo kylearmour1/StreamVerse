@@ -30,14 +30,6 @@ function App() {
               setUploadedVideos={setUploadedVideos}
             />
           </Route>
-
-          <Route path="/videolist">
-            <VideoList />
-          </Route>
-
-          <Route path="/editprofile">
-            <EditProfile />
-          </Route>
           <Route path="/profile">
             <Profile />
           </Route>
