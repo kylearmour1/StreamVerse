@@ -16,6 +16,7 @@ A user-centric video sharing platform allowing seamless registration, uploading,
 
 ## Key Features
 
+
 1. **Registration and Authentication**: StreamVerse provides a secure registration process for users to create their accounts. User authentication is implemented using JWT (JSON Web Tokens) for enhanced security and access control.
 
 2. **Video Upload**: Users can easily upload their videos to StreamVerse. The platform supports various video formats and ensures efficient and reliable upload processes.

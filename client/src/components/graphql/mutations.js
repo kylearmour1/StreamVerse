@@ -13,6 +13,8 @@ export const LOGIN_MUTATION = gql`
 
 
 
+
+
 export const NEW_USER_MUTATION = gql `
 mutation ($firstName: String!, 
 $lastName: String!, 
@@ -33,16 +35,4 @@ $email: String!,
     }
   }
 }`
-
-// export const NEW_USER_MUTATION = gql`
-//   mutation addUser( $username: String!, $password: String!) {
-//     addUser(username: $username, password: $password) {
-//       firstName
-//       lastName
-//       email
-//       username
-//       password
-//     }
-//   }
-// `;
 
