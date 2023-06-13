@@ -9,6 +9,10 @@ const commentSchema = new Schema({
         maxLength: 280,
         trim: true,
     },
+    video: {
+        type: Schema.Types.ObjectId,
+        ref: "Video",
+    },
     postDate: {
         type: Date,
         default: Date.now,

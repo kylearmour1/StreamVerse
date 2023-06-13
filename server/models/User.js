@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const userSchema = new Schema({
   firstName: {
@@ -12,7 +12,7 @@ const userSchema = new Schema({
     required: "You must enter a name.",
     trim: true,
   },
-  userName: {
+  username: {
     type: String,
     required: "Enter a Username",
     unique: true,
