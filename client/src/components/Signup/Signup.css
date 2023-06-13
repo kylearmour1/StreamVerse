@@ -27,6 +27,17 @@
   background: #242629;
 }
 
+.signupName{
+  color: rgb(172, 14, 14);
+  text-decoration: none;
+}
+
+.signupName:hover{
+  color: rgb(172, 14, 14);
+  text-decoration:underline;
+  cursor: pointer;
+}
+
 .input-field {
   width: 100%;
   max-width: 300px;
