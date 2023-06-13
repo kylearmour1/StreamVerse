@@ -19,7 +19,7 @@ fetchVideos('cats');
 }, []);
 
 const fetchVideos = (query) => {
-const apiKey = "AIzaSyD01a49s7izXijAlbo4Vu8py_lUlrvfcEU";
+const apiKey = "AIzaSyAkqX5r68pDfo8F_PwIT7vKIqJtnxCe_lE";
 const maxResults = 5;
 fetch(
   `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=${query}&key=${apiKey}`
@@ -66,7 +66,7 @@ return (
 {videos.map((video) => (
 <div key={video.id}>
 <h3>{video.title}</h3>
-<img src={video.thumbnail} alt={video.title} />
+{/* <img src={video.thumbnail} alt={video.title} /> */}
 <iframe
   title={video.title}
   src={video.videoUrl}

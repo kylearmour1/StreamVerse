@@ -5,88 +5,68 @@ import Auth from "../../utils/auth";
 import { Button } from "@mui/material";
 
 function Header(props) {
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
+const location = useLocation();
+const isHomePage = location.pathname === "/";
 
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
+const logout = (event) => {
+event.preventDefault();
+Auth.logout();
+};
 
-  const { searchQuery, handleChanges, handleSubmit } = props;
+const { handleChanges, handleSubmit } = props;
 
-  return (
-    <header>
-      <div className="title-search-container">
-        <h1>StreamVerse</h1>
-        {Auth.loggedIn() && (
-          <div className="form">
-            <form className="search-bar" onSubmit={handleSubmit}>
-              <input
-                type="text"
-                placeholder="Search..."
-                value={searchQuery}
-                onChange={handleChanges}
-              />
-              <Button
-                variant="outlined"
-                sx={{ color: "black", borderColor: "black", fontSize: "8px", padding: "4px 8px" }}
-                type="submit"
-              >
-                Video Search
-              </Button>
-            </form>
-          </div>
-        )}
-      </div>
-      <div className="button-container">
-        {Auth.loggedIn() ? (
-          <>
-            <Link to="/logout" onClick={logout}>
-              <Button
-                variant="outlined"
-                sx={{ color: "black", borderColor: "black" }}
-              >
-                Logout
-              </Button>
-            </Link>
-            {isHomePage && (
-              <Link to="/profile">
-                <Button
-                  variant="outlined"
-                  sx={{ color: "black", borderColor: "black" }}
-                >
-                  Go to StreamVerse
-                </Button>
-              </Link>
-            )}
-          </>
-        ) : (
-          <>
-            <Link to="/login">
-              <Button
-                variant="outlined"
-                color="secondary"
-                sx={{ color: "black", borderColor: "black" }}
-              >
-                Login
-              </Button>
-            </Link>
-            <Link to="/signup">
-              <Button
-                variant="outlined"
-                color="secondary"
-                sx={{ color: "black", borderColor: "black" }}
-              >
-                Signup
-              </Button>
-            </Link>
-          </>
-        )}
-      </div>
-    </header>
-  );
+return (
+<header>
+<div className="title-container">
+<h1>StreamVerse</h1>
+</div>
+<div className="button-container">
+{Auth.loggedIn() ? (
+<>
+<Link to="/logout" onClick={logout}>
+<Button
+variant="outlined"
+sx={{ color: "black", borderColor: "black" }}
+>
+Logout
+</Button>
+</Link>
+{isHomePage && (
+<Link to="/profile">
+<Button
+variant="outlined"
+sx={{ color: "black", borderColor: "black" }}
+>
+Go to StreamVerse
+</Button>
+</Link>
+)}
+</>
+) : (
+<>
+<Link to="/login">
+<Button
+variant="outlined"
+color="secondary"
+sx={{ color: "black", borderColor: "black" }}
+>
+Login
+</Button>
+</Link>
+<Link to="/signup">
+<Button
+variant="outlined"
+color="secondary"
+sx={{ color: "black", borderColor: "black" }}
+>
+Signup
+</Button>
+</Link>
+</>
+)}
+</div>
+</header>
+);
 }
 
 export default Header;
-
