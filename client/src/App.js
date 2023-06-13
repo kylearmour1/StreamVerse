@@ -59,9 +59,13 @@ function App() {
 
       <ThemeProvider theme={darkTheme}>
       <CssBaseline />
+   
     </ThemeProvider>
     </ApolloProvider>
   );
+
+  
+  
 }
 
 export default App;

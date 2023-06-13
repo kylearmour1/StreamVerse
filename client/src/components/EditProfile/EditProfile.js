@@ -1,28 +1,24 @@
 import React, { useEffect } from 'react';
 import AuthService from '../../utils/auth';
-import Sidebar from '../Sidebar/Sidebar';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+
 
 const EditProfile = () => {
   useEffect(() => {
- 
+    // Check if the user is authenticated
     if (!AuthService.loggedIn()) {
-
+      // If not authenticated, redirect to the login page
       window.location.assign('/');
     }
   }, []);
-
   return (
-    <>
-      <Sidebar />
-      <Header />
+    
+
       <div>
-  
+        {/* Your Profile specific JSX code */}
       </div>
-      <Footer />
-    </>
+
   );
+
 };
 
 export default EditProfile;
