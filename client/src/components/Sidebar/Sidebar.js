@@ -35,7 +35,11 @@ function Sidebar() {
           right: expanded ? '220px' : '20px',
           zIndex: 9999,
           backgroundColor: 'black',
+          border: 'none',
+          padding: '5px',
+          fontSize: '16px',
           color: 'whitesmoke',
+          borderRadius: '5px',
         }}
       >
         {expanded ? "Hide Sidebar" : "Show Sidebar"}

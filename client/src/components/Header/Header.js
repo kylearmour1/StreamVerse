@@ -26,7 +26,7 @@ return (
 <Link to="/logout" onClick={logout}>
 <Button
 variant="outlined"
-sx={{ color: "black", borderColor: "black" }}
+sx={{ backgroundImage:"linear-gradient(black, rgba(96, 10, 10, 0.795))", color: "white", borderColor: "white" }}
 >
 Logout
 </Button>
@@ -35,7 +35,7 @@ Logout
 <Link to="/profile">
 <Button
 variant="outlined"
-sx={{ color: "black", borderColor: "black" }}
+sx={{ backgroundImage:"linear-gradient(black, rgba(96, 10, 10, 0.795))", color: "white", borderColor: "white" }}
 >
 Go to StreamVerse
 </Button>
@@ -48,7 +48,7 @@ Go to StreamVerse
 <Button
 variant="outlined"
 color="secondary"
-sx={{ color: "black", borderColor: "black" }}
+sx={{ backgroundImage:"linear-gradient(black, rgba(96, 10, 10, 0.795))", color: "white", borderColor: "white" }}
 >
 Login
 </Button>
@@ -57,7 +57,7 @@ Login
 <Button
 variant="outlined"
 color="secondary"
-sx={{ color: "black", borderColor: "black" }}
+sx={{ backgroundImage:"linear-gradient(black, rgba(96, 10, 10, 0.795))", color: "white", borderColor: "white" }}
 >
 Signup
 </Button>
