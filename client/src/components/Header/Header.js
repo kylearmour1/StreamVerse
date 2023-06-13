@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import logo from "../../images/logo.png"
 
 
 function Header(props) {
@@ -7,7 +8,7 @@ function Header(props) {
 return (
 <header>
 <div className="title-container">
-<h1>StreamVerse</h1>
+<img src={logo} alt="Logo" />
 </div>
 </header>
 );

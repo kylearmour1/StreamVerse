@@ -11,14 +11,7 @@ function Navigation() {
         </li>
         <li>
           <Link to="/profile">Profile</Link>
-        </li>
-        <li>
-          <Link to="/videolist">VideoList</Link>
-        </li>
-        
-        <li>
-          <Link to="/editprofile">EditProfile</Link>
-        </li>
+        </li>  
         <li>
           
           <Link to="/logout">Logout</Link>
