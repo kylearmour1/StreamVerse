@@ -3,7 +3,6 @@ A user-centric video sharing platform allowing seamless registration, uploading,
 
 ## Table of Contents
 - [Introduction](#streamverse)
-- [Photos](#photos)
 - [Key Features](#key-features)
 - [Installation](#installation)
 - [Application](#application)
@@ -12,7 +11,6 @@ A user-centric video sharing platform allowing seamless registration, uploading,
 - [License](#license)
 - [Contact](#contact)
 
-## Photos
 
 ## Key Features
 
@@ -44,8 +42,10 @@ To set up StreamVerse locally, follow these steps:
 The application will be accessible at http://localhost:3000.
 
 ## Application
-[Heroku]()<br>
-[GitHub]()
+[Heroku](https://warm-ravine-32968.herokuapp.com/)<br>
+[GitHub](https://github.com/kylearmour1/StreamVerse)
+
+![Application Homepage](../StreamVerse/client/src/images/screenshot.png)
 
 ## Technology
 StreamVerse is built using the following technologies:
@@ -57,10 +57,10 @@ StreamVerse is built using the following technologies:
 
 ## Contributors
 
-- Kyle []()
-- Olive []()
-- Josh []()
-- Allyson[]()
+- Kyle Armour [@kylearmour1](https://github.com/kylearmour1)
+- Olive Provencio-Johnson [@Olive-Provencio-Johnson](https://github.com/Olive-Provencio-Johnson)
+- Josh Ungurait [@jbungurait](https://github.com/jbungurait)
+- Allyson Gonzales [@Ally27](https://github.com/Ally27)
 
 ## License
 MIT License

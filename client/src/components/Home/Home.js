@@ -130,9 +130,7 @@ return (
               </Tooltip>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              nec libero nec lacus suscipit tincidunt. Phasellus gravida
-              ultricies risus, eu condimentum massa pretium non.
+              Click here to upload a video to YouTube
             </p>
           </section>
           
