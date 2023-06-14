@@ -45,7 +45,7 @@ The application will be accessible at http://localhost:3000.
 [Heroku](https://warm-ravine-32968.herokuapp.com/)<br>
 [GitHub](https://github.com/kylearmour1/StreamVerse)
 
-![Application Homepage](../StreamVerse/client/src/images/screenshot.png)
+![Application Homepage](client/src/images/screenshot.png)
 
 ## Technology
 StreamVerse is built using the following technologies:
