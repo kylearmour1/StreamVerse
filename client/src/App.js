@@ -4,9 +4,7 @@ import { ApolloProvider } from "@apollo/client";
 import client from "./apolloClient";
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
-import VideoList from "./components/VideoList/VideoList";
 import Signup from "./components/Signup/Signup";
-import EditProfile from "./components/EditProfile/EditProfile";
 import Profile from "./components/Profile/Profile";
 import Logout from "./components/Login/Logout";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -31,14 +29,6 @@ function App() {
               uploadedVideos={uploadedVideos}
               setUploadedVideos={setUploadedVideos}
             />
-          </Route>
-
-          <Route path="/videolist">
-            <VideoList />
-          </Route>
-
-          <Route path="/editprofile">
-            <EditProfile />
           </Route>
           <Route path="/profile">
             <Profile />
